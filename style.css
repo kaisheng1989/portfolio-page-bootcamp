@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    150deg,
+    #cc7722,
+    #febe00
+  ); /*Change the colour from one color to another gradually*/
+  padding: 10px;
+}
+
+.card {
+  width: 350px;
+  height: 515px;
+  margin: 300px auto 0; /*Positioning of the card*/
+  background: transparent;
+  border-radius: 15px;
+  perspective: 1000px; /*To make rotation more 3D*/
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  position: absolute; /*Making the text of front and back in the same position.*/
+  backface-visibility: hidden;
+}
+
+.front {
+  background: url(Images/user.jpg);
+  background-size: cover;
+  background-position: center; /*Centering the image*/
+  padding: 60px 40px; /*Top and Bottom padding 60px Left and right: 40px*/
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+}
+
+.front h2 {
+  /*CSS changes to the CSS under h2 tag*/
+  font-weight: 1500;
+}
+
+.front p {
+  /*CSS changes to the CSS under p tag*/
+  color: black;
+  font-size: 20px;
+  background-color: #e5e4e2;
+}
+
+.front button {
+  width: 150px; /*Length of the button*/
+  border: 2px solid #fff;
+  background: transparent;
+  border-radius: 15px;
+  padding: 8px 20px; /*Distance from top, buttom, left, right*/
+  cursor: pointer;
+  margin-top: 18px; /*Distance between the words and the button*/
+  color: #fff;
+}
+
+.back {
+  color: #333;
+  padding: 20px 40px;
+  transform: rotateY(180deg);
+}
+
+.back h1 {
+  font-size: 50px;
+  line-height: 55px; /*spacing between each line*/
+  margin-bottom: 10px; /*distance between name and wording.*/
+  padding: 10px;
+}
+
+.back h1 span {
+  font-weight: 400;
+}
+
+.back p {
+  font-size: 14px;
+}
+
+.back p span {
+  font-weight: 600;
+}
+
+.back button {
+  background: transparent;
+  color: black;
+  border: 2px solid black;
+  padding: 8px 29px;
+  border-radius: 15px;
+  font-size: 18px;
+  margin-right: 15px;
+  margin-top: 50px;
+  
+  
+}
+
+.back a {
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back a img {
+  width: 50px;
+  margin-top: 40px;
+  float: left;
+  border-radius: 15px;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
